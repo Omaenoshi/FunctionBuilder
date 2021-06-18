@@ -1,0 +1,16 @@
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\OPZ\OPZ.Logic\bin\Debug\netcoreapp3.1\FunctionBuilder.Logic.deps.json
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\OPZ\OPZ.Logic\bin\Debug\netcoreapp3.1\FunctionBuilder.Logic.dll
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\OPZ\OPZ.Logic\bin\Debug\netcoreapp3.1\FunctionBuilder.Logic.pdb
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\OPZ\OPZ.Logic\obj\Debug\netcoreapp3.1\FunctionBuilder.Logic.AssemblyInfoInputs.cache
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\OPZ\OPZ.Logic\obj\Debug\netcoreapp3.1\FunctionBuilder.Logic.AssemblyInfo.cs
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\OPZ\OPZ.Logic\obj\Debug\netcoreapp3.1\FunctionBuilder.Logic.csproj.CoreCompileInputs.cache
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\OPZ\OPZ.Logic\obj\Debug\netcoreapp3.1\FunctionBuilder.Logic.dll
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\OPZ\OPZ.Logic\obj\Debug\netcoreapp3.1\FunctionBuilder.Logic.pdb
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\FunctionBuilder\FunctionBuilder.Logic\bin\Debug\netcoreapp3.1\FunctionBuilder.Logic.deps.json
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\FunctionBuilder\FunctionBuilder.Logic\bin\Debug\netcoreapp3.1\FunctionBuilder.Logic.dll
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\FunctionBuilder\FunctionBuilder.Logic\bin\Debug\netcoreapp3.1\FunctionBuilder.Logic.pdb
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\FunctionBuilder\FunctionBuilder.Logic\obj\Debug\netcoreapp3.1\FunctionBuilder.Logic.AssemblyInfoInputs.cache
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\FunctionBuilder\FunctionBuilder.Logic\obj\Debug\netcoreapp3.1\FunctionBuilder.Logic.AssemblyInfo.cs
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\FunctionBuilder\FunctionBuilder.Logic\obj\Debug\netcoreapp3.1\FunctionBuilder.Logic.csproj.CoreCompileInputs.cache
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\FunctionBuilder\FunctionBuilder.Logic\obj\Debug\netcoreapp3.1\FunctionBuilder.Logic.dll
+C:\Users\Максим.DESKTOP-NKDFPI1\source\repos\FunctionBuilder\FunctionBuilder.Logic\obj\Debug\netcoreapp3.1\FunctionBuilder.Logic.pdb

@@ -1,0 +1,8 @@
+C:\Users\rassv\source\repos\OPZ\OPZ.Logic\bin\Debug\netcoreapp3.1\OPZ.Logic.deps.json
+C:\Users\rassv\source\repos\OPZ\OPZ.Logic\bin\Debug\netcoreapp3.1\OPZ.Logic.dll
+C:\Users\rassv\source\repos\OPZ\OPZ.Logic\bin\Debug\netcoreapp3.1\OPZ.Logic.pdb
+C:\Users\rassv\source\repos\OPZ\OPZ.Logic\obj\Debug\netcoreapp3.1\OPZ.Logic.AssemblyInfoInputs.cache
+C:\Users\rassv\source\repos\OPZ\OPZ.Logic\obj\Debug\netcoreapp3.1\OPZ.Logic.AssemblyInfo.cs
+C:\Users\rassv\source\repos\OPZ\OPZ.Logic\obj\Debug\netcoreapp3.1\OPZ.Logic.csproj.CoreCompileInputs.cache
+C:\Users\rassv\source\repos\OPZ\OPZ.Logic\obj\Debug\netcoreapp3.1\OPZ.Logic.dll
+C:\Users\rassv\source\repos\OPZ\OPZ.Logic\obj\Debug\netcoreapp3.1\OPZ.Logic.pdb

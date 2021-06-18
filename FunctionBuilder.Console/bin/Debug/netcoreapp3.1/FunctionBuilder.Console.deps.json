@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "FunctionBuilder.Console/1.0.0": {
+        "dependencies": {
+          "FunctionBuilder.Logic": "1.0.0"
+        },
+        "runtime": {
+          "FunctionBuilder.Console.dll": {}
+        }
+      },
+      "FunctionBuilder.Logic/1.0.0": {
+        "runtime": {
+          "FunctionBuilder.Logic.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FunctionBuilder.Console/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FunctionBuilder.Logic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
