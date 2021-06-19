@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Максим.DESKTOP-NKDFPI1\\.nuget\\packages\\": {}
+    "C:\\Users\\rassv\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Максим.DESKTOP-NKDFPI1\\source\\repos\\FunctionBuilder\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj",
+      "projectUniqueName": "C:\\Users\\rassv\\source\\repos\\FunctionBuilder\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj",
       "projectName": "FunctionBuilder.Logic",
-      "projectPath": "C:\\Users\\Максим.DESKTOP-NKDFPI1\\source\\repos\\FunctionBuilder\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj",
-      "packagesPath": "C:\\Users\\Максим.DESKTOP-NKDFPI1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Максим.DESKTOP-NKDFPI1\\source\\repos\\FunctionBuilder\\FunctionBuilder.Logic\\obj\\",
+      "projectPath": "C:\\Users\\rassv\\source\\repos\\FunctionBuilder\\FunctionBuilder.Logic\\FunctionBuilder.Logic.csproj",
+      "packagesPath": "C:\\Users\\rassv\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rassv\\source\\repos\\FunctionBuilder\\FunctionBuilder.Logic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Максим.DESKTOP-NKDFPI1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rassv\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -21,14 +21,14 @@ namespace FunctionBuilder.Logic
             reversPolishNotation = rpn.ToRpn(expression);
         }
 
-        public Dictionary<double, double> CalculateFunctionValues()
+        public List<Value> CalculateFunctionValues()
         {
-            var result = new Dictionary<double, double>();
+            var result = new List<Value>();
 
             double argument = start;
             do
             {
-                result.Add(argument, Calculate(argument));
+                result.Add(new Value { X = argument, Y = Calculate(argument) });
                 argument += delta;
             }
             while (argument <= end);

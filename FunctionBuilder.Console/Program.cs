@@ -18,9 +18,9 @@
             Console.WriteLine(str);
             File.AppendAllText(@"..\..\..\opzResult.txt", resultOnOpz + "\n");
             var result = function.CalculateFunctionValues();
-            for (var x = start; x <= end; x += delta)
+            for (var x = 0; x < result.Count; x++)
             {
-                Console.WriteLine(x + "\t" + result[x]);
+                Console.WriteLine(result[x].ToString());
             }
 
         }

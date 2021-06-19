@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "brrV37z6eJHhy0+7ac118CVpbk6BD3HiuAF687DyTmdUPMC1RQwXpB8lqgZ9T/uPJOGdb0qmPs/s4FvBaPMzXQ==",
+  "dgSpecHash": "5BDhxMkKK0lDRy7NfCjgLj0v5jaA/YgotKOn1QZWJCTIdRAMQtoOcurMKMiFx1EUbDeMgT/uVX3FosYyNgQFRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Максим.DESKTOP-NKDFPI1\\source\\repos\\FunctionBuilder\\FunctionBuilder.Console\\FunctionBuilder.Console.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\rassv\\source\\repos\\FunctionBuilder\\FunctionBuilder.Console\\FunctionBuilder.Console.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rassv\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -5,14 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OPZ.Desktop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="1,-23,-1,23">
-        <Button Content="Посчитать" HorizontalAlignment="Left" Margin="400,46,0,0" VerticalAlignment="Top" Height="45" Width="172" Click="Button_Click"/>
-        <TextBox Name="Bar" HorizontalAlignment="Left" Margin="57,46,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="45" TextChanged="TextBox_TextChanged"/>
-        <TextBlock x:Name="OpzResultBar" HorizontalAlignment="Left" Margin="57,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Text="ОПЗ"/>
-        <Label Content="" x:Name="Result" HorizontalAlignment="Left" Margin="362,220,0,0" VerticalAlignment="Top" Height="28" Width="300"/>
-        <TextBlock x:Name="OpzBar" HorizontalAlignment="Left" Margin="57,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Text="ОТВЕТ"/>
-        <Label x:Name="OpzResult" Content="" HorizontalAlignment="Left" Margin="362,147,0,0" VerticalAlignment="Top" Width="300"/>
-
+        Title="MainWindow" Height="562" Width="627">
+    <Grid Margin="0,0,-1,2" RenderTransformOrigin="0.563,0.744">
+        <Button Content="Посчитать" HorizontalAlignment="Left" Margin="229,28,0,0" VerticalAlignment="Top" Height="19" Width="99" Click="Button_Click"/>
+        <TextBox x:Name="expressionBar" HorizontalAlignment="Left" Margin="51,29,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="167" Height="18" TextChanged="TextBox_TextChanged"/>
+        <TextBlock x:Name="OpzResultBar" HorizontalAlignment="Left" Margin="364,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Text="ОПЗ ="/>
+        <Label Content="" x:Name="result" HorizontalAlignment="Left" Margin="76,89,0,0" VerticalAlignment="Top" Height="27" Width="78"/>
+        <TextBlock x:Name="OpzBar" HorizontalAlignment="Left" Margin="34,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Text="ОТВЕТ"/>
+        <Label x:Name="opzResult" Content="" HorizontalAlignment="Left" Margin="400,26,0,0" VerticalAlignment="Top" Width="167" Height="24"/>
+        <TextBlock x:Name="OpzResultBar_Copy" HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="18"><Run Language="ru-ru" Text="Введите функцию"/></TextBlock>
+        <TextBlock x:Name="OpzResultBar_Copy1" HorizontalAlignment="Left" Margin="27,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="24" Text="y="/>
+        <TextBlock x:Name="OpzBar_Copy" HorizontalAlignment="Left" Margin="25,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91"><Run Language="ru-ru" Text="Введите начало"/></TextBlock>
+        <TextBox x:Name="startBar" HorizontalAlignment="Left" Margin="122,66,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="24" Height="18" TextChanged="TextBox_TextChanged"/>
+        <TextBlock x:Name="OpzBar_Copy1" HorizontalAlignment="Left" Margin="208,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91"><Run Language="ru-ru" Text="Введите конец"/></TextBlock>
+        <TextBox x:Name="endBar" HorizontalAlignment="Left" Margin="304,65,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="24" Height="18" TextChanged="TextBox_TextChanged"/>
+        <TextBlock x:Name="deltaBarText" HorizontalAlignment="Left" Margin="381,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"><Run Text="Введите "/><Run Language="ru-ru" Text="величину изменения"/></TextBlock>
+        <TextBox x:Name="deltaBar" HorizontalAlignment="Left" Margin="555,67,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="24" Height="18" TextChanged="TextBox_TextChanged"/>
+        <DataGrid x:Name="valuesGrid" Grid.Column="0" Margin="10,121,511,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="X" Binding="{Binding X}"  Width="10" MinWidth="20"/>
+                <DataGridTextColumn Header="Y" Binding="{Binding Y}"  Width="10" MinWidth="20"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Canvas Name="FunctionField" Margin="122,121,10,10" Background="WhiteSmoke" SizeChanged="FunctionField_SizeChanged" ClipToBounds="True"/>
     </Grid>
 </Window>
