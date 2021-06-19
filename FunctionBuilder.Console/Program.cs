@@ -9,24 +9,21 @@
     {
         static void Main(string[] args)
         {
-            var str = GetChars(File.ReadAllText(@"..\..\..\opz.txt"));
-            var opz = new GoOPZ();
-            var resultOnOpz = opz.GetResult(str);
-            Console.WriteLine(resultOnOpz);
+            var str = File.ReadAllText(@"..\..\..\opz.txt");
+            double start = -5;
+            double end = 5;
+            double delta = 1;
+            Function function = new Function(str, start, end, delta);
+            var resultOnOpz = function.GetRpn();
+            Console.WriteLine(str);
             File.AppendAllText(@"..\..\..\opzResult.txt", resultOnOpz + "\n");
+            var result = function.CalculateFunctionValues();
+            for (var x = start; x <= end; x += delta)
+            {
+                Console.WriteLine(x + "\t" + result[x]);
+            }
 
-            var calc = new Calculator();
-
-            var result = calc.Calculate(GetChars(resultOnOpz));
-            Console.WriteLine(result);
-            File.AppendAllText(@"..\..\..\opzResult.txt", result.ToString() + "\n");
         }
 
-        public static char[] GetChars(string str)
-        {
-            return str.ToCharArray()
-            .Where(x => x != ' ')
-            .ToArray();
-        }
     }
 }

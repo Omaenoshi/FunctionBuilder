@@ -33,18 +33,14 @@ namespace OPZ.Desktop
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var opz = new GoOPZ();
-            var resultOnOpz = opz.GetResult(Bar.Text.ToCharArray()
-            .Where(x => x != ' ')
-            .ToArray());
+            Rpn rpn = new Rpn();
+            var resultOnOpz = rpn.ToRpn(Bar.Text);
 
-            var calc = new Calculator();
-            var result = calc.Calculate(resultOnOpz.ToCharArray()
-            .Where(x => x != ' ')
-            .ToArray());
+            //var calc = new Calculator();
+            //var result = calc.Calculate(resultOnOpz);
 
-            Result.Content = result;
-            OpzResult.Content = resultOnOpz;
+            //Result.Content = result;
+            OpzResult.Content = rpn.ToString();
         }
     }
 }
