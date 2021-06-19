@@ -21,10 +21,37 @@ namespace OPZ.Desktop
     /// </summary>
     public partial class MainWindow : Window
     {
+        private double scroll = 1;
+        public double Scroll
+        {
+            set
+            {
+                if (value <= 0) scroll = 1;
+                else scroll = value;
+            }
+
+            get
+            {
+                return scroll;
+            }
+        }
+
+        private double height;
+        private double width;
+
         public MainWindow()
         {
             InitializeComponent();
+            FunctionField.MouseWheel += FunctionField_ScaleWheel;
         }
+
+        private void FunctionField_ScaleWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (e.Delta > 0) Scroll += 5;
+            if (e.Delta < 0) Scroll -= 5;
+            Button_Click(sender, e);
+        }
+
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -36,31 +63,17 @@ namespace OPZ.Desktop
             double start = string.IsNullOrEmpty(startBar.Text) ? -1000 : double.Parse(startBar.Text);
             double end = string.IsNullOrEmpty(endBar.Text) ? 1000 : double.Parse(endBar.Text);
             double delta = string.IsNullOrEmpty(deltaBar.Text) ? 1 : double.Parse(deltaBar.Text);
+            height = FunctionField.ActualHeight;
+            width = FunctionField.ActualWidth;
 
             Function function = new Function(expressionBar.Text, start, end, delta);
-
             opzResult.Content = function.GetRpn();
             result.Content = function.Calculate();
-
             List<Value> functionValues = new List<Value>();
             functionValues = function.CalculateFunctionValues();
-
             valuesGrid.Items.Clear();
             AddItems(functionValues);
-
             DrawGraphic(functionValues);
-            //FunctionField.Children.Clear();
-            //Line xAxis = new Line();
-            //double height = FunctionField.ActualHeight;
-            //double width = FunctionField.ActualWidth;
-
-            //xAxis.X1 = 0;
-            //xAxis.Y1 = height / 2;
-            //xAxis.X2 = width;
-            //xAxis.Y2 = height / 2;
-            //xAxis.Stroke = Brushes.Red;
-            //xAxis.StrokeThickness = 2;
-            //FunctionField.Children.Add(xAxis);
         }
 
 
@@ -77,99 +90,104 @@ namespace OPZ.Desktop
             }
         }
 
-        //private void Draw()
-        //{
-        //    FunctionField.Children.Clear();
-        //    double height = FunctionField.ActualHeight;
-        //    double width = FunctionField.ActualWidth;
-
-        //    var xAxis = DrawGorizont(height, width);
-        //    var yAxis = DrawVertikal(height, width);
-
-        //    //Polygon arrow1 = new Polygon();
-        //    //arrow1.Points.Add(new Point(height / 2, width));
-        //    //arrow1.Points.Add(new Point(height / 2 - 10, width - 15));
-        //    //arrow1.Points.Add(new Point(height / 2 + 10, width - 15));
-        //    //arrow1.Fill = Brushes.Black;
-
-        //    Point pointStart = new Point(width / 2 + 40, height / 2 + 40);
-        //    Point pointEnd = new Point(width / 2 + 40, height / 2 + 40);
-
-        //    //Ellipse elipse = new Ellipse();
-        //    //elipse.Width = 4;
-        //    //elipse.Height = 4;
-        //    //elipse.StrokeThickness = 2;
-        //    //elipse.Stroke = Brushes.Red;
-        //    //elipse.Margin = new Thickness(point.X - 2, point.Y - 2, 0, 0);
-
-
-        //    FunctionField.Children.Add(xAxis);
-        //    FunctionField.Children.Add(yAxis);
-        //    //canvasPlot.Children.Add(arrow1);
-        //    //canvasPlot.Children.Add(elipse);
-        //    PathGeometry geo = new PathGeometry();
-        //    PathFigure function = new PathFigure();
-        //    function.StartPoint = pointStart;
-        //    LineSegment line = new LineSegment(pointEnd, false);
-        //    function.Segments.Add(line);
-        //    function.Segments.Add(new LineSegment(function.StartPoint, false));
-        //    geo.Figures.Add(function);
-        //    FunctionField.Children.Add(new Path { Stroke = Brushes.Red, StrokeThickness = 3, Data = geo });
-        //
-
         private void DrawGraphic(List<Value> functionValues)
         {
-            FunctionField.Children.Clear();
-            double height = FunctionField.ActualHeight;
-            double width = FunctionField.ActualWidth;
-            DrawGorizont(height, width);
-            DrawVertikal(height, width);
+            FunctionField.Children.Clear();           
+            DrawHorizont();
+            DrawVertical();
+
             for (int i = 0; i < functionValues.Count - 1; i++)
             {
-                Line myLine = new Line();
-                myLine.Stroke = Brushes.Red;
-                myLine.StrokeThickness = 2;
-                myLine.X1 = width / 2 + functionValues[i].X;
-                myLine.X2 = width / 2 + functionValues[i + 1].X;
-                myLine.Y1 = height / 2 - functionValues[i].Y;
-                myLine.Y2 = height / 2 - functionValues[i + 1].Y;
-                FunctionField.Children.Add(myLine);
+                Line line = new Line();
+                line.Stroke = Brushes.Red;
+                line.StrokeThickness = 2;
+                line.X1 = width / 2 + functionValues[i].X*scroll;
+                line.X2 = width / 2 + functionValues[i + 1].X*scroll;
+                line.Y1 = height / 2 - functionValues[i].Y*scroll;
+                line.Y2 = height / 2 - functionValues[i + 1].Y*scroll;
+                FunctionField.Children.Add(line);
             }
         }
 
-        private void DrawGorizont(double height, double width)
+        private void DrawHorizont()
         {
-            Line xAxis = new Line();
+            Line horizontAxis = new Line();
+            horizontAxis.X1 = 0;
+            horizontAxis.Y1 = height / 2;
+            horizontAxis.X2 = width;
+            horizontAxis.Y2 = height / 2;
+            horizontAxis.Stroke = Brushes.Black;
+            horizontAxis.StrokeThickness = 2;
 
-            xAxis.X1 = 0;
-            xAxis.Y1 = height / 2;
-            xAxis.X2 = width;
-            xAxis.Y2 = height / 2;
-            xAxis.Stroke = Brushes.Black;
-            xAxis.StrokeThickness = 2;
+            for (int i = 0; i < width / 2; i++)
+            {
+                DrawCoordinatesX(i);
+            }
 
-            FunctionField.Children.Add(xAxis);
+            for (int i = 0; i > -width / 2; i--)
+            {
+                DrawCoordinatesX(i);
+            }
+
+            FunctionField.Children.Add(horizontAxis);
         }
 
-        private void DrawVertikal(double height, double width)
+        private void DrawCoordinatesX(int i)
         {
-            Line yAxis = new Line();
+            Line line = new Line();
+            line.Stroke = Brushes.Red;
+            line.StrokeThickness = 2;
+            line.X1 = i * scroll + width / 2;
+            line.X2 = i * scroll + width / 2;
+            line.Y1 = (-scroll * 0.3) + height / 2;
+            line.Y2 = (scroll * 0.3) + height / 2;
+            FunctionField.Children.Add(line);
 
-            yAxis.X1 = width / 2;
-            yAxis.Y1 = 0;
-            yAxis.X2 = width / 2;
-            yAxis.Y2 = height;
-            yAxis.Stroke = Brushes.Black;
-            yAxis.StrokeThickness = 2;
-
-            FunctionField.Children.Add(yAxis);
+            TextBlock dash = new TextBlock();
+            dash.Text = i.ToString();
+            Canvas.SetLeft(dash, i * scroll + width / 2);
+            Canvas.SetTop(dash, scroll + height / 2);
+            FunctionField.Children.Add(dash);       
         }
-    }
 
-    class Item
-    {
-        public double X { get; set; }
+        private void DrawVertical()
+        {
+            Line verticalAxis = new Line();
+            verticalAxis.X1 = width / 2;
+            verticalAxis.Y1 = 0;
+            verticalAxis.X2 = width / 2;
+            verticalAxis.Y2 = height;
+            verticalAxis.Stroke = Brushes.Black;
+            verticalAxis.StrokeThickness = 2;
 
-        public double Y { get; set; }
+            for (int i = 0; i < height / 2; i++)
+            {
+                DrawCoordinatesY(i);
+            }
+
+            for (int i = 0; i > -height / 2; i--)
+            {
+                DrawCoordinatesY(i);            }
+
+            FunctionField.Children.Add(verticalAxis);
+        }
+
+        private void DrawCoordinatesY(int i)
+        {
+            Line line = new Line();
+            line.Stroke = Brushes.Red;
+            line.StrokeThickness = 2;
+            line.X1 = (-scroll * 0.3) + width / 2;
+            line.X2 = (scroll * 0.3) + width / 2;
+            line.Y1 = i * scroll + height / 2;
+            line.Y2 = i * scroll + height / 2;
+            FunctionField.Children.Add(line);
+
+            TextBlock dash = new TextBlock();
+            dash.Text = i.ToString();
+            Canvas.SetLeft(dash, -scroll + width / 2);
+            Canvas.SetTop(dash, -i * scroll + height / 2);
+            FunctionField.Children.Add(dash);
+        }
     }
 }
